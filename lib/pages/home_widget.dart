@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class Home extends StatefulWidget {
+  Home({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -17,10 +17,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomeState createState() => _HomeState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomeState extends State<Home> {
   
   double _imgSize = 100;
 
@@ -72,16 +72,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // appBar: AppBar(
-      //   title: Text(widget.title),
-      // ),
-      // home: Container(
-      //   decoration: BoxDecoration(
-      //     image: AssetImage('bg-mainpage.jpg'),
-      //     fit: BoxFit.cover,
-      //   ),
-      // )
+
       home: Container(
+
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('bg-mainpage.jpg'), 
@@ -90,10 +83,14 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
 
         child: Scaffold(
+          // appBar: AppBar(
+          //   title: Text(widget.title),
+          // ),
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+
                 Container(
                   child: Image.asset(
                     'doodle400x400.png',
@@ -102,6 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   padding: EdgeInsets.only(bottom: 10.0),
                 ),
+
                 Container(
                   child: Text(
                     'hilmihisham',
@@ -109,20 +107,25 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   padding: EdgeInsets.only(bottom: 8.0),
                 ),
+
                 Container(
                   child: Text(
                     'MUHAMMAD HILMI BADROL HISHAM.',
                     style: h2StyleSmall,
+                    textAlign: TextAlign.center, // text alignment for word wrap
                   ),
-                  padding: EdgeInsets.only(bottom: 8.0),
+                  padding: EdgeInsets.only(bottom: 8.0, left: 15.0, right: 15.0,),
                 ),
+
                 Container(
                   child: Text(
                     'A coder for fun (and living, currently), blog writer without reader, and I\'ve graduated!',
                     style: pStyle,
+                    textAlign: TextAlign.center,
                   ),
-                  padding: EdgeInsets.only(bottom: 8.0),
+                  padding: EdgeInsets.only(bottom: 8.0, left: 15.0, right: 15.0,),
                 ),
+
                 Container(
                   child: Text(
                     '________',
@@ -132,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   padding: EdgeInsets.only(bottom: 16.0),
                 ),
-                // Text(' '), // 20201017 hilmi - placeholder to add empty line in between
+
                 InkWell(
                   child: Container(
                     child: Text(
@@ -143,51 +146,64 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () => launch('mailto:mail@hilmihisham.com'),
                 ),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
+                    
                     IconButton(
                       icon: FaIcon(FontAwesomeIcons.githubAlt),
                       onPressed: () => launch('https://github.com/hilmihisham'),
                     ),
+
                     Text(
                       ' · ',
                       style: Theme.of(context).textTheme.headline6,
                     ),
+
                     IconButton(
                       icon: FaIcon(FontAwesomeIcons.linkedin),
                       onPressed: () => launch('https://www.linkedin.com/in/hilmihisham/'),
                     ),
+
                     Text(
                       ' · ',
                       style: Theme.of(context).textTheme.headline6,
                     ),
+
                     IconButton(
                       icon: FaIcon(FontAwesomeIcons.tumblr),
                       onPressed: () => launch('https://hilmihisham.tumblr.com/'),
                     ),
+
                     Text(
                       ' · ',
                       style: Theme.of(context).textTheme.headline6,
                     ),
+
                     IconButton(
                       icon: FaIcon(FontAwesomeIcons.instagram),
                       onPressed: () => launch('https://www.instagram.com/hilmihisham/'),
                     ),
+
                     Text(
                       ' · ',
                       style: Theme.of(context).textTheme.headline6,
                     ),
+
                     IconButton(
                       icon: FaIcon(FontAwesomeIcons.youtubeSquare),
                       onPressed: () => launch('https://www.youtube.com/channel/UCAMEaCIqFgxEumO5nML_Kxg'),
                     ),
+
                   ],
                 )
               ],
             ),
           ),
+
           backgroundColor: Color.fromRGBO(8, 135, 197, 0.73),
+
         ),
       ),
     );
