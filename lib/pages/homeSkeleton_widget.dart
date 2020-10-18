@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'indexPage_widget.dart';
 import 'placeholder_widget.dart';
+import 'resumePage_widget.dart';
 
 class Home extends StatefulWidget {
   Home({Key key, this.title}) : super(key: key);
@@ -22,7 +23,8 @@ class _HomeState extends State<Home> {
   final List<Widget> _children = [
     IndexPage(),
     PlaceholderWidget(Colors.orange),
-    PlaceholderWidget(Colors.red),
+    ResumePage(),
+    // PlaceholderWidget(Colors.red),
   ];
 
   @override
